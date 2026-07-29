@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .title { font: 700 22px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 1.6; }
+      .box-accent { fill: #f1f5f9; stroke: #2563eb; stroke-width: 1.8; }
+      .box-db { fill: #dbeafe; stroke: #1d4ed8; stroke-width: 1.8; }
+      .text { font: 700 14px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .text-small { font: 600 12.5px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .arrow { stroke: #475569; stroke-width: 2; fill: none; }
+      .arrow-accent { stroke: #2563eb; stroke-width: 2; fill: none; }
+      .legend { font: 600 12px Arial, Helvetica, sans-serif; fill: #334155; }
+    ]]></style>
+    <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowHeadAccent" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="50" class="title">System Architecture (Laravel)</text>
+
+  <!-- Left column -->
+  <rect x="120" y="90" width="430" height="70" rx="14" class="box-accent"/>
+  <text x="335" y="132" text-anchor="middle" class="text">Browser UI (Blade + Bootstrap)</text>
+
+  <rect x="120" y="190" width="430" height="70" rx="14" class="box"/>
+  <text x="335" y="232" text-anchor="middle" class="text">Routes (routes/web.php)</text>
+
+  <rect x="120" y="290" width="430" height="70" rx="14" class="box"/>
+  <text x="335" y="320" text-anchor="middle" class="text">Middleware</text>
+  <text x="335" y="342" text-anchor="middle" class="text-small">auth, role:lecturer, role:student</text>
+
+  <rect x="120" y="400" width="430" height="130" rx="14" class="box"/>
+  <text x="335" y="435" text-anchor="middle" class="text">Controllers</text>
+  <text x="335" y="458" text-anchor="middle" class="text-small">AuthController,</text>
+  <text x="335" y="478" text-anchor="middle" class="text-small">AttendanceSessionController,</text>
+  <text x="335" y="498" text-anchor="middle" class="text-small">AttendanceController, CourseController, ReportController</text>
+
+  <rect x="120" y="560" width="430" height="110" rx="14" class="box"/>
+  <text x="335" y="595" text-anchor="middle" class="text">Services</text>
+  <text x="335" y="618" text-anchor="middle" class="text-small">AttendanceSessionService</text>
+  <text x="335" y="640" text-anchor="middle" class="text-small">AttendanceService (mark + email)</text>
+
+  <rect x="120" y="700" width="430" height="80" rx="14" class="box"/>
+  <text x="335" y="735" text-anchor="middle" class="text">Policies</text>
+  <text x="335" y="757" text-anchor="middle" class="text-small">CoursePolicy, AttendanceSessionPolicy</text>
+
+  <!-- Middle: models + db -->
+  <rect x="640" y="560" width="430" height="110" rx="14" class="box"/>
+  <text x="855" y="595" text-anchor="middle" class="text">Eloquent Models</text>
+  <text x="855" y="620" text-anchor="middle" class="text-small">User, Course, AttendanceSession,</text>
+  <text x="855" y="642" text-anchor="middle" class="text-small">AttendanceRecord</text>
+
+  <rect x="640" y="700" width="430" height="80" rx="14" class="box-db"/>
+  <text x="855" y="747" text-anchor="middle" class="text">MySQL Database</text>
+
+  <!-- Right: mail -->
+  <rect x="1140" y="250" width="380" height="90" rx="14" class="box-accent"/>
+  <text x="1330" y="290" text-anchor="middle" class="text">Mail (Mailable)</text>
+  <text x="1330" y="315" text-anchor="middle" class="text-small">AttendanceSessionActivatedMail</text>
+
+  <rect x="1140" y="390" width="380" height="90" rx="14" class="box-accent"/>
+  <text x="1330" y="430" text-anchor="middle" class="text">SMTP Provider</text>
+  <text x="1330" y="455" text-anchor="middle" class="text-small">(send() - immediate, no queue)</text>
+
+  <!-- Arrows -->
+  <path d="M335,160 L335,190" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M335,260 L335,290" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M335,360 L335,400" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M335,530 L335,560" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M335,670 L335,700" class="arrow" marker-end="url(#arrowHead)"/>
+
+  <!-- Services to Models -->
+  <path d="M550,615 L640,615" class="arrow" marker-end="url(#arrowHead)"/>
+
+  <!-- Models to MySQL -->
+  <path d="M855,670 L855,700" class="arrow" marker-end="url(#arrowHead)"/>
+
+  <!-- Services to Mail -->
+  <path d="M550,600 C760,600 900,295 1140,295" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+
+  <!-- Mail to SMTP -->
+  <path d="M1330,340 L1330,390" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+
+  <!-- Controllers to Policies (side) -->
+  <path d="M550,465 C600,465 600,740 550,740" class="arrow" marker-end="url(#arrowHead)"/>
+
+  <text x="1180" y="120" class="legend">Data writes/reads via Models to MySQL</text>
+  <text x="1180" y="140" class="legend">Email path is immediate (no queue)</text>
+</svg>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1100" viewBox="0 0 1200 1100">
+  <rect width="1200" height="1100" fill="#ffffff"/>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .title { font: 700 22px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 1.5; }
+      .box-accent { fill: #f1f5f9; stroke: #2563eb; stroke-width: 1.8; }
+      .text { font: 600 14px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .text-small { font: 600 13px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .diamond { fill: #f8fafc; stroke: #334155; stroke-width: 1.6; }
+      .arrow { stroke: #475569; stroke-width: 2; fill: none; }
+      .arrow-accent { stroke: #2563eb; stroke-width: 2; fill: none; }
+      .legend { font: 600 12px Arial, Helvetica, sans-serif; fill: #334155; }
+    ]]></style>
+    <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowHeadAccent" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="50" class="title">Attendance System Flowchart</text>
+
+  <!-- Top row -->
+  <rect x="50" y="90" width="240" height="60" rx="12" class="box-accent"/>
+  <text x="170" y="126" text-anchor="middle" class="text">Start</text>
+
+  <rect x="350" y="90" width="240" height="60" rx="12" class="box"/>
+  <text x="470" y="126" text-anchor="middle" class="text">Login / Register</text>
+
+  <polygon points="720,120 820,80 920,120 820,160" class="diamond"/>
+  <text x="820" y="116" text-anchor="middle" class="text-small">Role?</text>
+  <text x="820" y="134" text-anchor="middle" class="text-small">Lecturer / Student</text>
+
+  <!-- Lecturer column -->
+  <rect x="60" y="260" width="300" height="58" rx="12" class="box-accent"/>
+  <text x="210" y="295" text-anchor="middle" class="text">Lecturer Dashboard</text>
+
+  <rect x="60" y="350" width="300" height="58" rx="12" class="box"/>
+  <text x="210" y="385" text-anchor="middle" class="text">Create Attendance Session</text>
+
+  <rect x="60" y="440" width="300" height="58" rx="12" class="box"/>
+  <text x="210" y="475" text-anchor="middle" class="text">Activate Session</text>
+
+  <rect x="60" y="530" width="300" height="58" rx="12" class="box"/>
+  <text x="210" y="565" text-anchor="middle" class="text">Display QR Code</text>
+
+  <rect x="60" y="620" width="300" height="58" rx="12" class="box"/>
+  <text x="210" y="655" text-anchor="middle" class="text">Close Session</text>
+
+  <rect x="60" y="710" width="300" height="58" rx="12" class="box-accent"/>
+  <text x="210" y="745" text-anchor="middle" class="text">Reports / Export CSV</text>
+
+  <!-- Student column -->
+  <rect x="780" y="260" width="340" height="58" rx="12" class="box-accent"/>
+  <text x="950" y="295" text-anchor="middle" class="text">Student Dashboard</text>
+
+  <rect x="780" y="350" width="340" height="58" rx="12" class="box"/>
+  <text x="950" y="385" text-anchor="middle" class="text">Scan QR (camera)</text>
+
+  <rect x="780" y="440" width="340" height="58" rx="12" class="box"/>
+  <text x="950" y="475" text-anchor="middle" class="text">Validate Token and Enrollment</text>
+
+  <polygon points="850,570 950,530 1050,570 950,610" class="diamond"/>
+  <text x="950" y="566" text-anchor="middle" class="text-small">Already recorded?</text>
+  <text x="950" y="582" text-anchor="middle" class="text-small">(Reject duplicates)</text>
+
+  <rect x="780" y="680" width="340" height="58" rx="12" class="box"/>
+  <text x="950" y="715" text-anchor="middle" class="text">Create Attendance Record</text>
+
+  <rect x="780" y="770" width="340" height="58" rx="12" class="box-accent"/>
+  <text x="950" y="805" text-anchor="middle" class="text">Send Confirmation Email (sync)</text>
+
+  <rect x="780" y="860" width="340" height="58" rx="12" class="box"/>
+  <text x="950" y="895" text-anchor="middle" class="text">Success Screen</text>
+
+  <!-- Arrows: top -->
+  <path d="M290,120 L350,120" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M590,120 L720,120" class="arrow" marker-end="url(#arrowHead)"/>
+
+  <!-- Role to Lecturer / Student -->
+  <path d="M760,150 C650,190 380,220 360,260" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <text x="520" y="220" text-anchor="middle" class="legend">Lecturer</text>
+
+  <path d="M880,150 C930,190 930,220 950,260" class="arrow" marker-end="url(#arrowHead)"/>
+  <text x="1000" y="220" text-anchor="middle" class="legend">Student</text>
+
+  <!-- Lecturer vertical -->
+  <path d="M210,318 L210,350" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <path d="M210,408 L210,440" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <path d="M210,498 L210,530" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <path d="M210,588 L210,620" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <path d="M210,678 L210,710" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+
+  <!-- Student vertical -->
+  <path d="M950,318 L950,350" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M950,408 L950,440" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M950,498 L950,530" class="arrow" marker-end="url(#arrowHead)"/>
+
+  <!-- Decision: Yes reject back to scan -->
+  <path d="M1050,570 C1120,570 1120,380 1120,380 L1120,379" class="arrow" marker-end="url(#arrowHead)"/>
+  <text x="1135" y="480" class="legend">Yes: Reject</text>
+
+  <!-- Decision: No create record -->
+  <path d="M950,610 L950,680" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <text x="970" y="650" class="legend">No: Record</text>
+
+  <!-- Record -> email -> success -->
+  <path d="M950,738 L950,770" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M950,828 L950,860" class="arrow" marker-end="url(#arrowHead)"/>
+</svg>
