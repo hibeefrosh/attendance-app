@@ -12,12 +12,14 @@
 <body>
     <div class="d-flex justify-content-between align-items-start mb-4">
         <div>
+            <div class="text-uppercase small fw-bold text-primary mb-1">{{ config('mapoly.institution.short') }}</div>
             <h2 class="mb-1">{{ config('app.name') }}</h2>
             <h4>{{ $session->course->code }} — {{ $session->course->title }}</h4>
             <p class="mb-0 text-muted">
                 {{ $session->session_date->format('l, F j, Y') }}
                 · {{ substr($session->start_time, 0, 5) }}–{{ substr($session->end_time, 0, 5) }}
             </p>
+            <p class="mb-0 text-muted small">{{ config('mapoly.institution.full') }}</p>
         </div>
         <button class="btn btn-primary no-print" onclick="window.print()">Print / Save as PDF</button>
     </div>

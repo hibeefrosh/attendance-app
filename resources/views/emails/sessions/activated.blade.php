@@ -22,6 +22,10 @@
 
     <p>Thank you for checking in.</p>
 
-    <p>Regards,<br>{{ config('app.name') }}</p>
+    <p>
+        Regards,<br>
+        {{ config('app.name') }}<br>
+        <span style="color:#6b7280;font-size:12px">{{ config('mapoly.institution.full') }}</span>
+    </p>
 </body>
 </html>

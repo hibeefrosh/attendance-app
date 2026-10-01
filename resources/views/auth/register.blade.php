@@ -7,6 +7,7 @@
     <a href="{{ route('welcome') }}" class="auth-back"><i class="bi bi-arrow-left"></i></a>
 
     <h1 class="fw-bold mb-1" style="font-size:1.75rem">Create account</h1>
+    <p class="text-muted mb-1">{{ config('mapoly.institution.short') }} student registration</p>
     <p class="text-muted mb-4">Register once to start scanning attendance</p>
 
     @include('layouts.partials.alerts')
@@ -64,6 +65,10 @@
 
     <p class="text-center mt-4 mb-0 text-muted">
         Already have an account? <a href="{{ route('login') }}" class="fw-semibold">Login</a>
+    </p>
+    <p class="text-center text-muted small mt-3 mb-0">
+        {{ config('mapoly.institution.short') }} ·
+        <a href="{{ route('about') }}" class="fw-semibold text-decoration-none" style="color:#4C44CF">About project</a>
     </p>
 </div>
 @endsection

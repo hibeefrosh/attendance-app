@@ -27,7 +27,8 @@
         <p class="mb-1">{{ $session->course->title }}</p>
         <p class="opacity-75 mb-4">{{ $session->session_date->format('M d, Y') }} · Expires {{ $session->expires_at->format('H:i') }}</p>
         <div class="qr-display mb-4">{!! $qrSvg !!}</div>
-        <p class="mb-0">Scan with the Smart Attendance student app</p>
+        <p class="mb-0">Scan with the {{ config('mapoly.project.short_title') }} student app</p>
+        <p class="opacity-75 small mt-2 mb-0">{{ config('mapoly.institution.full') }}</p>
         <a href="{{ route('sessions.show', $session) }}" class="btn btn-outline-light mt-4 btn-pill">Back to session</a>
     </div>
     <script>setTimeout(() => location.reload(), 60000);</script>

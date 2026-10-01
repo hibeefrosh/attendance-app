@@ -80,6 +80,13 @@
                     @csrf
                     <button class="btn btn-outline-danger w-100 btn-pill" type="submit">Logout</button>
                 </form>
+
+                <div class="text-center mt-4">
+                    <a href="{{ route('about') }}" class="text-decoration-none small fw-semibold" style="color:#4C44CF">
+                        About this {{ config('mapoly.institution.short') }} project
+                    </a>
+                    <div class="text-muted small mt-1">{{ config('mapoly.institution.full') }}</div>
+                </div>
             </div>
         </div>
     </div>

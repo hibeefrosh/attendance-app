@@ -1,9 +1,9 @@
 <div class="lecturer-shell">
     <aside class="lecturer-sidebar d-none d-lg-flex">
         <a href="{{ route('dashboard') }}" class="brand">
-            <div class="brand-mark"><i class="bi bi-grid-fill"></i></div>
+            <div class="brand-mark"><i class="bi bi-mortarboard-fill"></i></div>
             <div>
-                <div class="fw-bold">Smart Attendance</div>
+                <div class="fw-bold">{{ config('mapoly.institution.short') }} Attendance</div>
                 <small class="opacity-75">Lecturer Panel</small>
             </div>
         </a>
@@ -29,11 +29,16 @@
             </a>
         </nav>
 
-        <div class="sidebar-footer d-flex align-items-center gap-2">
-            <div class="avatar avatar-sm">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</div>
-            <div class="overflow-hidden">
-                <div class="fw-semibold small text-truncate">{{ auth()->user()->name }}</div>
-                <div class="small opacity-75">Lecturer</div>
+        <div class="sidebar-footer">
+            <div class="d-flex align-items-center gap-2 mb-2">
+                <div class="avatar avatar-sm">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</div>
+                <div class="overflow-hidden">
+                    <div class="fw-semibold small text-truncate">{{ auth()->user()->name }}</div>
+                    <div class="small opacity-75">Lecturer</div>
+                </div>
+            </div>
+            <div class="small opacity-50 px-1" style="font-size:.68rem;line-height:1.35">
+                {{ config('mapoly.institution.short') }} student project
             </div>
         </div>
     </aside>

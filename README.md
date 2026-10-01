@@ -1,6 +1,14 @@
-# QR Code Student Attendance Management System
+# MAPOLY Smart Attendance
 
-Production-style Laravel academic project for QR-based class attendance.
+QR Code Student Attendance Monitoring System for **Moshood Abiola Polytechnic (MAPOLY)**.
+
+## Project owners
+
+| Name | Matric Number |
+|------|---------------|
+| Ojebiyi Samson Oluwaferanmi | 24/145/0196 |
+| Adeniyi Gbenga | 24/145/0082 |
+| Akinwale Elijah Idowu | 24/145/0100 |
 
 ## Stack
 
@@ -20,18 +28,7 @@ Production-style Laravel academic project for QR-based class attendance.
 
 ## Setup
 
-1. Configure `.env` for MySQL:
-
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=attendance_app
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-2. Create the database (if needed), then:
+1. Configure `.env` for MySQL, then:
 
 ```bash
 composer install
@@ -52,15 +49,6 @@ Open `http://127.0.0.1:8000`
 
 Students log in with **matric number**. Lecturers can use email.
 
-## Typical test flow
-
-1. Login as **lecturer** → create/activate a session → open **Display QR**.
-2. Login as **student1** (enrolled) → **Scan QR** → allow camera → confirm success toast.
-3. Scan again → should return “already recorded”.
-4. Login as a student not enrolled in that course → should be rejected.
-5. Close/expire session → QR should be rejected.
-6. Lecturer → **Reports** → filter + export CSV; open session print view for PDF via browser print.
-
 ## Main modules
 
 - Auth (custom login + student registration)
@@ -68,12 +56,11 @@ Students log in with **matric number**. Lecturers can use email.
 - Attendance sessions + QR generation
 - Student camera scan (AJAX)
 - Dashboards + reports
+- About page (MAPOLY branding + project owners)
 
 ## Key paths
 
 - Controllers: `app/Http/Controllers`
 - Services: `app/Services`
-- Policies: `app/Policies`
-- Requests: `app/Http/Requests`
 - Views: `resources/views`
-- Migrations/Seeders: `database/`
+- Institution config: `config/mapoly.php`

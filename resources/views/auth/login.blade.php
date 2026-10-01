@@ -9,8 +9,11 @@
     </a>
 
     <div class="login-header text-center">
+        <div class="fw-bold text-uppercase mb-2" style="letter-spacing:.1em;color:#4C44CF;font-size:.75rem">
+            {{ config('mapoly.institution.short') }}
+        </div>
         <h1 class="login-title">Login</h1>
-        <p class="login-subtitle">Welcome back! Please sign in to continue</p>
+        <p class="login-subtitle">{{ config('mapoly.project.short_title') }} — sign in to continue</p>
     </div>
 
     @include('layouts.partials.alerts')
@@ -48,6 +51,10 @@
 
     <p class="login-footer text-center">
         Don’t have an account? <a href="{{ route('register') }}">Register</a>
+    </p>
+    <p class="text-center text-muted small mt-3 mb-0">
+        {{ config('mapoly.institution.short') }} ·
+        <a href="{{ route('about') }}" style="color:#4C44CF;font-weight:600;text-decoration:none">About project</a>
     </p>
 </div>
 @endsection

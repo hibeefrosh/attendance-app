@@ -1,17 +1,22 @@
 @extends('layouts.guest')
 
-@section('title', 'Smart Attendance')
+@section('title', config('mapoly.project.short_title'))
 
 @section('content')
 <div class="welcome-screen">
     <div class="welcome-top text-center">
         <div class="welcome-logo-badge mx-auto mb-3" aria-hidden="true">
-            <i class="bi bi-qr-code"></i>
+            <i class="bi bi-mortarboard-fill"></i>
         </div>
 
-        <h1 class="welcome-title">Smart Attendance</h1>
-        <p class="welcome-tagline">Scan. Mark. Track.</p>
-        <p class="welcome-desc">A modern QR code based attendance system</p>
+        <div class="fw-bold text-uppercase mb-2" style="letter-spacing:.1em;color:#4C44CF;font-size:.78rem">
+            {{ config('mapoly.institution.short') }}
+        </div>
+        <h1 class="welcome-title">{{ config('mapoly.project.short_title') }}</h1>
+        <p class="welcome-tagline">{{ config('mapoly.project.tagline') }}</p>
+        <p class="welcome-desc">
+            QR attendance system for {{ config('mapoly.institution.full') }}
+        </p>
     </div>
 
     <div class="welcome-illustration" aria-hidden="true">
@@ -74,6 +79,9 @@
     <div class="welcome-actions">
         <a href="{{ route('register') }}" class="btn btn-brand btn-lg w-100">Get Started</a>
         <a href="{{ route('login') }}" class="welcome-login-link">Login</a>
+        <a href="{{ route('about') }}" class="d-block text-center mt-3 text-muted small text-decoration-none">
+            About this project · {{ config('mapoly.institution.short') }}
+        </a>
     </div>
 </div>
 @endsection
