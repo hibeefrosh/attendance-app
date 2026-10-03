@@ -4,7 +4,7 @@
             <div class="brand-mark"><i class="bi bi-mortarboard-fill"></i></div>
             <div>
                 <div class="fw-bold">{{ config('mapoly.institution.short') }} Attendance</div>
-                <small class="opacity-75">Lecturer Panel</small>
+                <small class="opacity-75">Lecturer / Admin</small>
             </div>
         </a>
 

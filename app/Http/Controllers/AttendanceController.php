@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Attendance\MarkAttendanceRequest;
 use App\Models\AttendanceRecord;
 use App\Models\AttendanceSession;
+use App\Models\User;
 use App\Services\AttendanceService;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -124,5 +126,17 @@ class AttendanceController extends Controller
             'enrolled' => $enrolled,
             'presentIds' => $presentIds,
         ]);
+    }
+
+    public function markManual(Request $request, AttendanceSession $session, User $student): RedirectResponse
+    {
+        $this->authorize('update', $session);
+
+        $result = $this->attendanceService->markManual($session, $student, $request);
+
+        return back()->with(
+            $result['success'] ? 'success' : 'error',
+            $result['message']
+        );
     }
 }

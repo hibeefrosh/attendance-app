@@ -16,16 +16,28 @@
         <p class="login-subtitle">{{ config('mapoly.project.short_title') }} — sign in to continue</p>
     </div>
 
+    <div class="mb-4 p-3" style="background:#f8f9fb;border-radius:14px;border:1px solid #e5e7eb">
+        <div class="small fw-semibold mb-2">Choose the correct account</div>
+        <div class="small text-muted mb-1">
+            <strong>Lecturer / Admin panel:</strong> login with email
+            <code>lecturer@demo.com</code>
+        </div>
+        <div class="small text-muted mb-0">
+            <strong>Student app:</strong> login with matric number
+            <code>CS/2022/001</code>
+        </div>
+    </div>
+
     @include('layouts.partials.alerts')
 
     <form method="POST" action="{{ route('login') }}" class="login-form">
         @csrf
 
         <div class="mb-3">
-            <label class="form-label login-label" for="login">Matric Number</label>
+            <label class="form-label login-label" for="login">Matric Number or Email</label>
             <input type="text" name="login" id="login" value="{{ old('login') }}"
                    class="form-control login-input @error('login') is-invalid @enderror"
-                   placeholder="Enter your matric number" required autofocus autocomplete="username">
+                   placeholder="Student matric or lecturer email" required autofocus autocomplete="username">
             @error('login') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
 
@@ -50,11 +62,11 @@
     </form>
 
     <p class="login-footer text-center">
-        Don’t have an account? <a href="{{ route('register') }}">Register</a>
+        Student without account? <a href="{{ route('register') }}">Register</a>
     </p>
     <p class="text-center text-muted small mt-3 mb-0">
         {{ config('mapoly.institution.short') }} ·
-        <a href="{{ route('about') }}" style="color:#4C44CF;font-weight:600;text-decoration:none">About project</a>
+        <a href="{{ route('about') }}" style="color:#4C44CF;font-weight:600;text-decoration:none">About / How to use</a>
     </p>
 </div>
 @endsection

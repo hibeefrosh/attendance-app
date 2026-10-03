@@ -36,7 +36,7 @@ class UpdateProfileRequest extends FormRequest
                 Rule::unique('users', 'matric_number')->ignore($user->id),
             ];
             $rules['department'] = ['required', 'string', 'max:255'];
-            $rules['level'] = ['required', 'string', 'max:50'];
+            $rules['level'] = ['required', 'string', 'in:'.implode(',', config('mapoly.levels'))];
         }
 
         return $rules;

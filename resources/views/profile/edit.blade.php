@@ -52,7 +52,7 @@
                             <div class="col-6 mb-3">
                                 <label class="form-label fw-semibold">Level</label>
                                 <select name="level" class="form-select @error('level') is-invalid @enderror" required>
-                                    @foreach(['100','200','300','400','500'] as $level)
+                                    @foreach(config('mapoly.levels') as $level)
                                         <option value="{{ $level }}" @selected(old('level', $user->level) === $level)>{{ $level }}</option>
                                     @endforeach
                                 </select>

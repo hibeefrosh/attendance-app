@@ -24,7 +24,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'matric_number' => strtoupper(fake()->bothify('CS/####/###')),
             'department' => 'Computer Science',
-            'level' => fake()->randomElement(['100', '200', '300', '400']),
+            'level' => fake()->randomElement(config('mapoly.levels', ['ND I', 'ND II', 'HND I', 'HND II'])),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),

@@ -29,11 +29,11 @@ class DemoDataSeeder extends Seeder
         );
 
         $students = collect([
-            ['name' => 'Ibrahim Musa', 'email' => 'student1@demo.com', 'matric_number' => 'CS/2022/001', 'level' => '300'],
-            ['name' => 'Aisha Bello', 'email' => 'student2@demo.com', 'matric_number' => 'CS/2022/002', 'level' => '300'],
-            ['name' => 'Chinedu Okafor', 'email' => 'student3@demo.com', 'matric_number' => 'CS/2022/003', 'level' => '200'],
-            ['name' => 'Fatima Yusuf', 'email' => 'student4@demo.com', 'matric_number' => 'CS/2021/014', 'level' => '400'],
-            ['name' => 'Tunde Adeyemi', 'email' => 'student5@demo.com', 'matric_number' => 'CS/2023/021', 'level' => '200'],
+            ['name' => 'Ibrahim Musa', 'email' => 'student1@demo.com', 'matric_number' => 'CS/2022/001', 'level' => 'HND I'],
+            ['name' => 'Aisha Bello', 'email' => 'student2@demo.com', 'matric_number' => 'CS/2022/002', 'level' => 'HND I'],
+            ['name' => 'Chinedu Okafor', 'email' => 'student3@demo.com', 'matric_number' => 'CS/2022/003', 'level' => 'ND II'],
+            ['name' => 'Fatima Yusuf', 'email' => 'student4@demo.com', 'matric_number' => 'CS/2021/014', 'level' => 'HND II'],
+            ['name' => 'Tunde Adeyemi', 'email' => 'student5@demo.com', 'matric_number' => 'CS/2023/021', 'level' => 'ND I'],
         ])->map(function (array $data) use ($studentRole) {
             return User::query()->updateOrCreate(
                 ['email' => $data['email']],

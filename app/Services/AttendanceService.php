@@ -122,6 +122,53 @@ class AttendanceService
     }
 
     /**
+     * Lecturer manually marks a student present (fallback when QR scan is unavailable).
+     *
+     * @return array{success: bool, message: string, record?: AttendanceRecord}
+     */
+    public function markManual(AttendanceSession $session, User $student, Request $request): array
+    {
+        $session->loadMissing('course');
+        $session->markExpiredIfNeeded();
+        $session->refresh();
+
+        if (! in_array($session->status, ['active', 'closed'], true)) {
+            return $this->fail('Session must be active or closed before manual marking.');
+        }
+
+        if (! $session->course->hasStudent($student)) {
+            return $this->fail('Student is not enrolled in this course.');
+        }
+
+        if ($this->alreadyMarked($student, $session)) {
+            return $this->fail('Attendance already recorded for this student.');
+        }
+
+        try {
+            $record = AttendanceRecord::create([
+                'student_id' => $student->id,
+                'course_id' => $session->course_id,
+                'attendance_session_id' => $session->id,
+                'checked_in_at' => now(),
+                'ip_address' => $request->ip(),
+                'device_info' => 'Manual mark by lecturer',
+            ]);
+        } catch (QueryException $e) {
+            if ($this->isUniqueViolation($e)) {
+                return $this->fail('Attendance already recorded for this student.');
+            }
+
+            throw $e;
+        }
+
+        return [
+            'success' => true,
+            'message' => 'Student marked present manually.',
+            'record' => $record,
+        ];
+    }
+
+    /**
      * Attendance percentage for a student across enrolled courses (or one course).
      */
     public function studentAttendancePercentage(User $student, ?int $courseId = null): float

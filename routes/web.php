@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/sessions/{session}/qr', [AttendanceSessionController::class, 'qr'])->name('sessions.qr');
         Route::get('/sessions/{session}/qr-image', [AttendanceSessionController::class, 'qrImage'])->name('sessions.qr-image');
         Route::get('/sessions/{session}/attendance', [AttendanceController::class, 'sessionList'])->name('sessions.attendance');
+        Route::post('/sessions/{session}/attendance/{student}', [AttendanceController::class, 'markManual'])->name('sessions.attendance.manual');
 
         Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
         Route::get('/reports/export', [ReportController::class, 'exportCsv'])->name('reports.export');

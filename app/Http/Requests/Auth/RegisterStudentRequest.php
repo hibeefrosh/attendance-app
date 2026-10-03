@@ -20,7 +20,7 @@ class RegisterStudentRequest extends FormRequest
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],
             'matric_number' => ['required', 'string', 'max:50', 'unique:users,matric_number'],
             'department' => ['required', 'string', 'max:255'],
-            'level' => ['required', 'string', 'max:50'],
+            'level' => ['required', 'string', 'in:'.implode(',', config('mapoly.levels'))],
             'password' => ['required', 'confirmed', Password::defaults()],
         ];
     }
