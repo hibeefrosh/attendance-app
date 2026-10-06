@@ -7,7 +7,7 @@ QR Code Student Attendance Monitoring System for **Moshood Abiola Polytechnic (M
 | Name | Matric Number |
 |------|---------------|
 | Ojebiyi Samson Oluwaferanmi | 24/145/0196 |
-| Adeniyi Gbenga | 24/145/0082 |
+| Adeniyi Gbenga Daniel | 24/145/0082 |
 | Akinwale Elijah Idowu | 24/145/0100 |
 
 ## Stack

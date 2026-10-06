@@ -1,7 +1,9 @@
 <aside class="app-sidebar d-none d-lg-flex flex-column">
     <div class="sidebar-brand px-3 py-4">
         <a href="{{ route('dashboard') }}" class="text-decoration-none text-white d-flex align-items-center gap-2">
-            <i class="bi bi-mortarboard-fill fs-3"></i>
+            <div class="mapoly-logo-sm">
+                <img src="{{ asset('images/mapoly-logo.png') }}" alt="MAPOLY">
+            </div>
             <div>
                 <div class="fw-bold">{{ config('mapoly.institution.short') }} Attendance</div>
                 <small class="opacity-75">{{ auth()->user()->isLecturer() ? 'Lecturer' : 'Student' }}</small>

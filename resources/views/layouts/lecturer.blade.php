@@ -1,7 +1,9 @@
 <div class="lecturer-shell">
     <aside class="lecturer-sidebar d-none d-lg-flex">
         <a href="{{ route('dashboard') }}" class="brand">
-            <div class="brand-mark"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="brand-mark">
+                <img src="{{ asset('images/mapoly-logo.png') }}" alt="MAPOLY">
+            </div>
             <div>
                 <div class="fw-bold">{{ config('mapoly.institution.short') }} Attendance</div>
                 <small class="opacity-75">Lecturer / Admin</small>

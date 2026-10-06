@@ -6,9 +6,12 @@
 <div class="auth-screen">
     <a href="{{ route('welcome') }}" class="auth-back"><i class="bi bi-arrow-left"></i></a>
 
-    <h1 class="fw-bold mb-1" style="font-size:1.75rem">Create account</h1>
-    <p class="text-muted mb-1">{{ config('mapoly.institution.short') }} student registration</p>
-    <p class="text-muted mb-4">Register once to start scanning attendance</p>
+    <div class="mapoly-logo-bold" style="width:88px;height:88px;border-radius:20px;margin:0 auto 1rem">
+        <img src="{{ asset('images/mapoly-logo.png') }}" alt="MAPOLY Logo">
+    </div>
+    <h1 class="fw-bold mb-1 text-center" style="font-size:1.75rem">Create account</h1>
+    <p class="text-muted mb-1 text-center">{{ config('mapoly.institution.short') }} student registration</p>
+    <p class="text-muted mb-4 text-center">Register once to start scanning attendance</p>
 
     @include('layouts.partials.alerts')
 

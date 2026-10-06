@@ -9,7 +9,10 @@
     </a>
 
     <div class="login-header text-center">
-        <div class="fw-bold text-uppercase mb-2" style="letter-spacing:.1em;color:#4C44CF;font-size:.75rem">
+        <div class="mapoly-logo-bold" style="width:96px;height:96px;border-radius:22px;margin:0 auto 1rem">
+            <img src="{{ asset('images/mapoly-logo.png') }}" alt="MAPOLY Logo">
+        </div>
+        <div class="fw-bold text-uppercase mb-2" style="letter-spacing:.1em;color:#6b1d2a;font-size:.75rem">
             {{ config('mapoly.institution.short') }}
         </div>
         <h1 class="login-title">Login</h1>

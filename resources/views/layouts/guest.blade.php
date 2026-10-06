@@ -17,11 +17,17 @@
         .mobile-auth { min-height: 100vh; max-width: 480px; margin: 0 auto; background: #fff; }
         .welcome-screen { min-height: 100vh; display: flex; flex-direction: column; padding: 2.25rem 1.5rem 2rem; background: #fff; }
         .welcome-logo-badge {
-            width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center;
-            color: #fff; font-size: 1.85rem; margin: 0 auto 1rem;
-            background: linear-gradient(145deg, #7B74EA 0%, #4C44CF 100%);
-            box-shadow: 0 12px 28px rgba(76, 68, 207, .28);
+            width: 112px; height: 112px; border-radius: 28px; display: grid; place-items: center;
+            margin: 0 auto 1rem; background: #fff; border: 3px solid #6b1d2a;
+            box-shadow: 0 14px 32px rgba(107, 29, 42, .28); overflow: hidden; padding: 8px;
         }
+        .welcome-logo-badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .mapoly-logo-bold {
+            width: 120px; height: 120px; border-radius: 28px; background: #fff;
+            border: 3px solid #6b1d2a; box-shadow: 0 14px 32px rgba(107, 29, 42, .28);
+            padding: 8px; overflow: hidden; margin: 0 auto 1rem;
+        }
+        .mapoly-logo-bold img { width: 100%; height: 100%; object-fit: contain; display: block; }
         .welcome-login-link { display: block; text-align: center; margin-top: 1rem; font-weight: 700; color: #4C44CF; text-decoration: none; }
         .auth-screen { padding: 1.25rem 1.25rem 2rem; }
         .login-screen { padding: 1.1rem 1.5rem 2rem; min-height: 100vh; background: #fff; }

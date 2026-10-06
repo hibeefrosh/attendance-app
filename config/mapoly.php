@@ -35,7 +35,7 @@ return [
             'matric' => '24/145/0196',
         ],
         [
-            'name' => 'Adeniyi Gbenga',
+            'name' => 'Adeniyi Gbenga Daniel',
             'matric' => '24/145/0082',
         ],
         [

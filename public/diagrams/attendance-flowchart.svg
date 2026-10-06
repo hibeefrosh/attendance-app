@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1100" viewBox="0 0 1200 1100">
-  <rect width="1200" height="1100" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1180" viewBox="0 0 1200 1180">
+  <rect width="1200" height="1180" fill="#ffffff"/>
   <defs>
     <style type="text/css"><![CDATA[
-      .title { font: 700 22px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .title { font: 700 24px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .sub { font: 600 14px Arial, Helvetica, sans-serif; fill: #6b1d2a; }
       .box { fill: #f8fafc; stroke: #334155; stroke-width: 1.5; }
-      .box-accent { fill: #f1f5f9; stroke: #2563eb; stroke-width: 1.8; }
+      .box-accent { fill: #f8fafc; stroke: #6b1d2a; stroke-width: 2; }
+      .box-lec { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; }
+      .box-stu { fill: #f0fdf4; stroke: #059669; stroke-width: 1.6; }
       .text { font: 600 14px Arial, Helvetica, sans-serif; fill: #0f172a; }
-      .text-small { font: 600 13px Arial, Helvetica, sans-serif; fill: #0f172a; }
-      .diamond { fill: #f8fafc; stroke: #334155; stroke-width: 1.6; }
+      .text-small { font: 600 12px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .diamond { fill: #fff7ed; stroke: #c2410c; stroke-width: 1.6; }
       .arrow { stroke: #475569; stroke-width: 2; fill: none; }
       .arrow-accent { stroke: #2563eb; stroke-width: 2; fill: none; }
+      .arrow-stu { stroke: #059669; stroke-width: 2; fill: none; }
       .legend { font: 600 12px Arial, Helvetica, sans-serif; fill: #334155; }
     ]]></style>
     <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
@@ -19,95 +23,104 @@
     <marker id="arrowHeadAccent" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
       <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
     </marker>
+    <marker id="arrowHeadStu" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#059669"/>
+    </marker>
   </defs>
 
-  <text x="40" y="50" class="title">Attendance System Flowchart</text>
+  <text x="40" y="42" class="sub">MOSHOOD ABIOLA POLYTECHNIC (MAPOLY)</text>
+  <text x="40" y="76" class="title">APPENDIX B - System Flowchart</text>
+  <text x="40" y="100" class="legend">Lecturer/Admin path (blue) and Student path (green)</text>
 
-  <!-- Top row -->
-  <rect x="50" y="90" width="240" height="60" rx="12" class="box-accent"/>
-  <text x="170" y="126" text-anchor="middle" class="text">Start</text>
+  <rect x="50" y="130" width="240" height="58" rx="29" class="box-accent"/>
+  <text x="170" y="165" text-anchor="middle" class="text">Start</text>
 
-  <rect x="350" y="90" width="240" height="60" rx="12" class="box"/>
-  <text x="470" y="126" text-anchor="middle" class="text">Login / Register</text>
+  <rect x="350" y="130" width="240" height="58" rx="12" class="box"/>
+  <text x="470" y="165" text-anchor="middle" class="text">Login / Register</text>
 
-  <polygon points="720,120 820,80 920,120 820,160" class="diamond"/>
-  <text x="820" y="116" text-anchor="middle" class="text-small">Role?</text>
-  <text x="820" y="134" text-anchor="middle" class="text-small">Lecturer / Student</text>
+  <polygon points="820,160 920,120 1020,160 920,200" class="diamond"/>
+  <text x="920" y="156" text-anchor="middle" class="text-small">Role?</text>
+  <text x="920" y="174" text-anchor="middle" class="text-small">Lecturer / Student</text>
 
-  <!-- Lecturer column -->
-  <rect x="60" y="260" width="300" height="58" rx="12" class="box-accent"/>
-  <text x="210" y="295" text-anchor="middle" class="text">Lecturer Dashboard</text>
+  <!-- Lecturer -->
+  <rect x="60" y="280" width="300" height="54" rx="12" class="box-lec"/>
+  <text x="210" y="313" text-anchor="middle" class="text">Lecturer / Admin Panel</text>
 
-  <rect x="60" y="350" width="300" height="58" rx="12" class="box"/>
-  <text x="210" y="385" text-anchor="middle" class="text">Create Attendance Session</text>
+  <rect x="60" y="360" width="300" height="54" rx="12" class="box-lec"/>
+  <text x="210" y="393" text-anchor="middle" class="text">Create Course + Assign Students</text>
 
-  <rect x="60" y="440" width="300" height="58" rx="12" class="box"/>
-  <text x="210" y="475" text-anchor="middle" class="text">Activate Session</text>
+  <rect x="60" y="440" width="300" height="54" rx="12" class="box-lec"/>
+  <text x="210" y="473" text-anchor="middle" class="text">Create Attendance Session</text>
 
-  <rect x="60" y="530" width="300" height="58" rx="12" class="box"/>
-  <text x="210" y="565" text-anchor="middle" class="text">Display QR Code</text>
+  <rect x="60" y="520" width="300" height="54" rx="12" class="box-lec"/>
+  <text x="210" y="553" text-anchor="middle" class="text">Activate Session</text>
 
-  <rect x="60" y="620" width="300" height="58" rx="12" class="box"/>
-  <text x="210" y="655" text-anchor="middle" class="text">Close Session</text>
+  <rect x="60" y="600" width="300" height="54" rx="12" class="box-accent"/>
+  <text x="210" y="633" text-anchor="middle" class="text">Generate / Display QR Code</text>
 
-  <rect x="60" y="710" width="300" height="58" rx="12" class="box-accent"/>
-  <text x="210" y="745" text-anchor="middle" class="text">Reports / Export CSV</text>
+  <rect x="60" y="680" width="300" height="54" rx="12" class="box-lec"/>
+  <text x="210" y="713" text-anchor="middle" class="text">Manual Mark (if needed)</text>
 
-  <!-- Student column -->
-  <rect x="780" y="260" width="340" height="58" rx="12" class="box-accent"/>
-  <text x="950" y="295" text-anchor="middle" class="text">Student Dashboard</text>
+  <rect x="60" y="760" width="300" height="54" rx="12" class="box-lec"/>
+  <text x="210" y="793" text-anchor="middle" class="text">Close Session + Reports</text>
 
-  <rect x="780" y="350" width="340" height="58" rx="12" class="box"/>
-  <text x="950" y="385" text-anchor="middle" class="text">Scan QR (camera)</text>
+  <!-- Student -->
+  <rect x="780" y="280" width="340" height="54" rx="12" class="box-stu"/>
+  <text x="950" y="313" text-anchor="middle" class="text">Student App</text>
 
-  <rect x="780" y="440" width="340" height="58" rx="12" class="box"/>
-  <text x="950" y="475" text-anchor="middle" class="text">Validate Token and Enrollment</text>
+  <rect x="780" y="360" width="340" height="54" rx="12" class="box-stu"/>
+  <text x="950" y="393" text-anchor="middle" class="text">Register Account (ND/HND level)</text>
 
-  <polygon points="850,570 950,530 1050,570 950,610" class="diamond"/>
-  <text x="950" y="566" text-anchor="middle" class="text-small">Already recorded?</text>
-  <text x="950" y="582" text-anchor="middle" class="text-small">(Reject duplicates)</text>
+  <rect x="780" y="440" width="340" height="54" rx="12" class="box-stu"/>
+  <text x="950" y="473" text-anchor="middle" class="text">Enrolled in Course by Lecturer</text>
 
-  <rect x="780" y="680" width="340" height="58" rx="12" class="box"/>
-  <text x="950" y="715" text-anchor="middle" class="text">Create Attendance Record</text>
+  <rect x="780" y="520" width="340" height="54" rx="12" class="box-stu"/>
+  <text x="950" y="553" text-anchor="middle" class="text">Scan QR (camera)</text>
 
-  <rect x="780" y="770" width="340" height="58" rx="12" class="box-accent"/>
-  <text x="950" y="805" text-anchor="middle" class="text">Send Confirmation Email (sync)</text>
+  <polygon points="850,650 950,610 1050,650 950,690" class="diamond"/>
+  <text x="950" y="646" text-anchor="middle" class="text-small">Valid + enrolled</text>
+  <text x="950" y="662" text-anchor="middle" class="text-small">and not duplicate?</text>
 
-  <rect x="780" y="860" width="340" height="58" rx="12" class="box"/>
-  <text x="950" y="895" text-anchor="middle" class="text">Success Screen</text>
+  <rect x="780" y="760" width="340" height="54" rx="12" class="box-stu"/>
+  <text x="950" y="793" text-anchor="middle" class="text">Create Record + Send Email</text>
 
-  <!-- Arrows: top -->
-  <path d="M290,120 L350,120" class="arrow" marker-end="url(#arrowHead)"/>
-  <path d="M590,120 L720,120" class="arrow" marker-end="url(#arrowHead)"/>
+  <rect x="780" y="840" width="340" height="54" rx="12" class="box-accent"/>
+  <text x="950" y="873" text-anchor="middle" class="text">Success Screen</text>
 
-  <!-- Role to Lecturer / Student -->
-  <path d="M760,150 C650,190 380,220 360,260" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
-  <text x="520" y="220" text-anchor="middle" class="legend">Lecturer</text>
+  <rect x="780" y="920" width="340" height="54" rx="12" class="box"/>
+  <text x="950" y="953" text-anchor="middle" class="text">Reject / Retry Scan</text>
 
-  <path d="M880,150 C930,190 930,220 950,260" class="arrow" marker-end="url(#arrowHead)"/>
-  <text x="1000" y="220" text-anchor="middle" class="legend">Student</text>
+  <!-- Top arrows -->
+  <path d="M290,159 L350,159" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M590,159 L820,159" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M850,185 C650,230 420,250 360,280" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <text x="560" y="250" class="legend">Lecturer</text>
+  <path d="M980,185 C980,230 960,250 950,280" class="arrow-stu" marker-end="url(#arrowHeadStu)"/>
+  <text x="1010" y="250" class="legend">Student</text>
 
   <!-- Lecturer vertical -->
-  <path d="M210,318 L210,350" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
-  <path d="M210,408 L210,440" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
-  <path d="M210,498 L210,530" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
-  <path d="M210,588 L210,620" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
-  <path d="M210,678 L210,710" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <path d="M210,334 L210,360" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <path d="M210,414 L210,440" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <path d="M210,494 L210,520" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <path d="M210,574 L210,600" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <path d="M210,654 L210,680" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
+  <path d="M210,734 L210,760" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
 
   <!-- Student vertical -->
-  <path d="M950,318 L950,350" class="arrow" marker-end="url(#arrowHead)"/>
-  <path d="M950,408 L950,440" class="arrow" marker-end="url(#arrowHead)"/>
-  <path d="M950,498 L950,530" class="arrow" marker-end="url(#arrowHead)"/>
+  <path d="M950,334 L950,360" class="arrow-stu" marker-end="url(#arrowHeadStu)"/>
+  <path d="M950,414 L950,440" class="arrow-stu" marker-end="url(#arrowHeadStu)"/>
+  <path d="M950,494 L950,520" class="arrow-stu" marker-end="url(#arrowHeadStu)"/>
+  <path d="M950,574 L950,610" class="arrow-stu" marker-end="url(#arrowHeadStu)"/>
+  <path d="M950,690 L950,760" class="arrow-stu" marker-end="url(#arrowHeadStu)"/>
+  <text x="965" y="730" class="legend">Yes</text>
+  <path d="M1050,650 C1120,650 1120,947 1120,947 L1120,947" class="arrow" marker-end="url(#arrowHead)"/>
+  <text x="1060" y="800" class="legend">No</text>
+  <path d="M950,814 L950,840" class="arrow-stu" marker-end="url(#arrowHeadStu)"/>
+  <path d="M1120,947 C1050,947 1020,947 950,947" class="arrow" marker-end="url(#arrowHead)"/>
 
-  <!-- Decision: Yes reject back to scan -->
-  <path d="M1050,570 C1120,570 1120,380 1120,380 L1120,379" class="arrow" marker-end="url(#arrowHead)"/>
-  <text x="1135" y="480" class="legend">Yes: Reject</text>
-
-  <!-- Decision: No create record -->
-  <path d="M950,610 L950,680" class="arrow-accent" marker-end="url(#arrowHeadAccent)"/>
-  <text x="970" y="650" class="legend">No: Record</text>
-
-  <!-- Record -> email -> success -->
-  <path d="M950,738 L950,770" class="arrow" marker-end="url(#arrowHead)"/>
-  <path d="M950,828 L950,860" class="arrow" marker-end="url(#arrowHead)"/>
+  <text x="40" y="1040" class="sub">Notes</text>
+  <text x="40" y="1068" class="legend">1. QR is generated by lecturer after activating a session (fast attendance).</text>
+  <text x="40" y="1090" class="legend">2. Student account registration is via Register form; course enrolment is by lecturer Assign Students.</text>
+  <text x="40" y="1112" class="legend">3. Manual Mark Present is available on lecturer Attendance List as fallback.</text>
+  <text x="40" y="1155" class="legend">Developed by: Ojebiyi Samson Oluwaferanmi · Adeniyi Gbenga Daniel · Akinwale Elijah Idowu</text>
 </svg>

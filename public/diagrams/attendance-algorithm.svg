@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1280" viewBox="0 0 1100 1280">
+  <rect width="1100" height="1280" fill="#ffffff"/>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .title { font: 700 24px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .sub { font: 600 14px Arial, Helvetica, sans-serif; fill: #6b1d2a; }
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 1.6; }
+      .box-start { fill: #f1f5f9; stroke: #6b1d2a; stroke-width: 2; }
+      .box-action { fill: #ffffff; stroke: #2563eb; stroke-width: 1.6; }
+      .box-end { fill: #ecfdf5; stroke: #059669; stroke-width: 2; }
+      .diamond { fill: #fff7ed; stroke: #c2410c; stroke-width: 1.6; }
+      .text { font: 600 14px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .small { font: 600 12px Arial, Helvetica, sans-serif; fill: #334155; }
+      .arrow { stroke: #475569; stroke-width: 2; fill: none; }
+      .label { font: 600 12px Arial, Helvetica, sans-serif; fill: #475569; }
+    ]]></style>
+    <marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="48" class="sub">MOSHOOD ABIOLA POLYTECHNIC (MAPOLY)</text>
+  <text x="40" y="82" class="title">APPENDIX A  Attendance Marking Algorithm</text>
+  <text x="40" y="108" class="label">Smart Attendance Monitoring System Using QR Codes and Mobile Devices</text>
+
+  <!-- Start -->
+  <rect x="390" y="140" width="320" height="54" rx="27" class="box-start"/>
+  <text x="550" y="173" text-anchor="middle" class="text">START: Student scans QR</text>
+
+  <!-- Step 1 -->
+  <rect x="360" y="230" width="380" height="54" rx="10" class="box-action"/>
+  <text x="550" y="263" text-anchor="middle" class="text">1. Extract token from QR payload</text>
+
+  <!-- D1 -->
+  <polygon points="550,340 720,390 550,440 380,390" class="diamond"/>
+  <text x="550" y="385" text-anchor="middle" class="small">2. Session found</text>
+  <text x="550" y="402" text-anchor="middle" class="small">for token?</text>
+
+  <!-- Fail invalid -->
+  <rect x="780" y="363" width="260" height="54" rx="10" class="box"/>
+  <text x="910" y="396" text-anchor="middle" class="text">STOP: Invalid QR</text>
+
+  <!-- D2 -->
+  <polygon points="550,500 720,550 550,600 380,550" class="diamond"/>
+  <text x="550" y="545" text-anchor="middle" class="small">3. Session active</text>
+  <text x="550" y="562" text-anchor="middle" class="small">and not expired?</text>
+
+  <rect x="780" y="523" width="260" height="54" rx="10" class="box"/>
+  <text x="910" y="556" text-anchor="middle" class="text">STOP: Closed/Expired</text>
+
+  <!-- D3 -->
+  <polygon points="550,660 720,710 550,760 380,710" class="diamond"/>
+  <text x="550" y="705" text-anchor="middle" class="small">4. Student enrolled</text>
+  <text x="550" y="722" text-anchor="middle" class="small">in course?</text>
+
+  <rect x="780" y="683" width="260" height="54" rx="10" class="box"/>
+  <text x="910" y="716" text-anchor="middle" class="text">STOP: Not enrolled</text>
+
+  <!-- D4 -->
+  <polygon points="550,820 720,870 550,920 380,870" class="diamond"/>
+  <text x="550" y="865" text-anchor="middle" class="small">5. Already marked</text>
+  <text x="550" y="882" text-anchor="middle" class="small">for session?</text>
+
+  <rect x="780" y="843" width="260" height="54" rx="10" class="box"/>
+  <text x="910" y="876" text-anchor="middle" class="text">STOP: Duplicate</text>
+
+  <!-- Create -->
+  <rect x="360" y="980" width="380" height="54" rx="10" class="box-action"/>
+  <text x="550" y="1013" text-anchor="middle" class="text">6. Create attendance record</text>
+
+  <!-- Email -->
+  <rect x="360" y="1070" width="380" height="54" rx="10" class="box-action"/>
+  <text x="550" y="1103" text-anchor="middle" class="text">7. Send confirmation email (sync)</text>
+
+  <!-- End -->
+  <rect x="390" y="1160" width="320" height="54" rx="27" class="box-end"/>
+  <text x="550" y="1193" text-anchor="middle" class="text">END: Success</text>
+
+  <!-- Arrows -->
+  <path d="M550,194 L550,230" class="arrow" marker-end="url(#ah)"/>
+  <path d="M550,284 L550,340" class="arrow" marker-end="url(#ah)"/>
+  <path d="M720,390 L780,390" class="arrow" marker-end="url(#ah)"/>
+  <text x="740" y="380" class="label">No</text>
+  <path d="M550,440 L550,500" class="arrow" marker-end="url(#ah)"/>
+  <text x="560" y="475" class="label">Yes</text>
+
+  <path d="M720,550 L780,550" class="arrow" marker-end="url(#ah)"/>
+  <text x="740" y="540" class="label">No</text>
+  <path d="M550,600 L550,660" class="arrow" marker-end="url(#ah)"/>
+  <text x="560" y="635" class="label">Yes</text>
+
+  <path d="M720,710 L780,710" class="arrow" marker-end="url(#ah)"/>
+  <text x="740" y="700" class="label">No</text>
+  <path d="M550,760 L550,820" class="arrow" marker-end="url(#ah)"/>
+  <text x="560" y="795" class="label">Yes</text>
+
+  <path d="M720,870 L780,870" class="arrow" marker-end="url(#ah)"/>
+  <text x="740" y="860" class="label">Yes</text>
+  <path d="M550,920 L550,980" class="arrow" marker-end="url(#ah)"/>
+  <text x="560" y="955" class="label">No</text>
+
+  <path d="M550,1034 L550,1070" class="arrow" marker-end="url(#ah)"/>
+  <path d="M550,1124 L550,1160" class="arrow" marker-end="url(#ah)"/>
+
+  <text x="40" y="1255" class="label">Developed by: Ojebiyi Samson Oluwaferanmi, Adeniyi Gbenga Daniel, Akinwale Elijah Idowu</text>
+</svg>

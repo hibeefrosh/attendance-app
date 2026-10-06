@@ -12,8 +12,13 @@
 <body>
     <div class="d-flex justify-content-between align-items-start mb-4">
         <div>
-            <div class="text-uppercase small fw-bold text-primary mb-1">{{ config('mapoly.institution.short') }}</div>
-            <h2 class="mb-1">{{ config('app.name') }}</h2>
+            <div class="d-flex align-items-center gap-3 mb-2">
+                <img src="{{ asset('images/mapoly-logo.png') }}" alt="MAPOLY" style="width:64px;height:64px;object-fit:contain;border:2px solid #6b1d2a;border-radius:12px;padding:4px;background:#fff">
+                <div>
+                    <div class="text-uppercase small fw-bold mb-1" style="color:#6b1d2a">{{ config('mapoly.institution.short') }}</div>
+                    <h2 class="mb-0">{{ config('app.name') }}</h2>
+                </div>
+            </div>
             <h4>{{ $session->course->code }} — {{ $session->course->title }}</h4>
             <p class="mb-0 text-muted">
                 {{ $session->session_date->format('l, F j, Y') }}

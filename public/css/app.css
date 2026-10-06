@@ -134,12 +134,21 @@ a:hover { color: var(--primary-dark); }
     text-decoration: none;
 }
 .lecturer-sidebar .brand-mark {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 12px;
-    background: rgba(255,255,255,.15);
+    background: #fff;
     display: grid;
     place-items: center;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,.85);
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    flex-shrink: 0;
+}
+.lecturer-sidebar .brand-mark img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
 }
 .lecturer-sidebar .nav-link {
     color: rgba(255,255,255,.78);
@@ -720,15 +729,60 @@ a:hover { color: var(--primary-dark); }
 .welcome-top { flex: 0 0 auto; padding-top: .5rem; }
 
 .welcome-logo-badge {
-    width: 64px;
-    height: 64px;
-    border-radius: 18px;
+    width: 112px;
+    height: 112px;
+    border-radius: 28px;
     display: grid;
     place-items: center;
     color: #fff;
     font-size: 1.85rem;
-    background: linear-gradient(145deg, #7B74EA 0%, #4C44CF 100%);
-    box-shadow: 0 12px 28px rgba(76, 68, 207, .28);
+    background: #fff;
+    border: 3px solid #6b1d2a;
+    box-shadow: 0 14px 32px rgba(107, 29, 42, .28);
+    overflow: hidden;
+    padding: 8px;
+}
+.welcome-logo-badge img,
+.mapoly-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+.mapoly-logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.mapoly-logo-bold {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+    background: #fff;
+    border: 3px solid #6b1d2a;
+    box-shadow: 0 14px 32px rgba(107, 29, 42, .28);
+    padding: 8px;
+    overflow: hidden;
+}
+.mapoly-logo-bold img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.mapoly-logo-sm {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px solid #6b1d2a;
+    padding: 3px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.mapoly-logo-sm img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .welcome-title {

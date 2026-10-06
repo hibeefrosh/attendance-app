@@ -5,8 +5,8 @@
 @section('content')
 <div class="welcome-screen">
     <div class="welcome-top text-center">
-        <div class="welcome-logo-badge mx-auto mb-3" aria-hidden="true">
-            <i class="bi bi-mortarboard-fill"></i>
+        <div class="welcome-logo-badge mx-auto mb-3" aria-label="MAPOLY logo">
+            <img src="{{ asset('images/mapoly-logo.png') }}" alt="MAPOLY Logo">
         </div>
 
         <div class="fw-bold text-uppercase mb-2" style="letter-spacing:.1em;color:#4C44CF;font-size:.78rem">
